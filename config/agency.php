@@ -1,10 +1,18 @@
 <?php
 
-// All service pages and FAQs are generated from this file.
+// All service pages, the pricing page and FAQs are generated from this file.
 // Edit text here; no template changes are needed.
+//
+// Each service has:
+//   intro, highlights  -> top of the service page
+//   offerings          -> "What we offer" list
+//   features           -> "Why choose us" cards
+//   process            -> 5 step process
+//   packages           -> prices shown on the service page AND the pricing page
+//                         (US dollars, DUMMY figures — change them to your real prices)
+//   faqs               -> questions on the service page (also sent to Google)
 
 return [
-
     'services' => [
         [
             'slug' => 'shopify-development',
@@ -48,8 +56,89 @@ return [
                     'q' => 'Can you redesign my existing Shopify store?',
                     'a' => 'Yes. We redesign, speed up and fix existing Shopify stores without interrupting your sales.',
                 ],
+                [
+                    'q' => 'How much does a Shopify store cost?',
+                    'a' => 'It depends on design, number of products and features. See the packages on our pricing page or ask for a free quote.',
+                ],
+                [
+                    'q' => 'Do you provide support after launch?',
+                    'a' => 'Yes. We offer support for updates, new features, apps and fixes after your store goes live.',
+                ],
             ],
             'summary' => 'High-converting Shopify stores with custom themes, apps and checkout functionality.',
+            'intro' => 'Launch or grow your online store with a Shopify team that understands design, speed and sales. We handle everything from theme and setup to apps, payments and launch, so you can focus on selling.',
+            'highlights' => [
+                'Up to 30% better conversion with a store designed to sell',
+                '100% unique design built for your brand',
+                'Fast, mobile-first store that ranks on Google',
+            ],
+            'offerings' => [
+                'Shopify Store Development',
+                'Shopify Customization',
+                'Shopify Theme Development',
+                'Shopify App Integration',
+                'Shopify Store Migration',
+                'Custom Functionalities',
+                'Payment & Shipping Setup',
+                'Shopify SEO',
+                'Shopify Speed Optimization',
+                'Shopify API Integrations',
+            ],
+            'process' => [
+                [
+                    'title' => 'Store Planning',
+                    'text' => 'We study your products, customers and competitors and plan the store structure.',
+                ],
+                [
+                    'title' => 'Theme Design',
+                    'text' => 'We design a custom, mobile-first theme that matches your brand.',
+                ],
+                [
+                    'title' => 'Apps & Features',
+                    'text' => 'We set up payments, shipping and the apps your store needs.',
+                ],
+                [
+                    'title' => 'Speed & SEO',
+                    'text' => 'We optimise speed, product pages and SEO before launch.',
+                ],
+                [
+                    'title' => 'Launch & Support',
+                    'text' => 'We go live, train your team and stay available for updates.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 299,
+                    'billing' => 'one-time',
+                    'best_for' => 'Start selling online quickly',
+                    'features' => ['Premium theme setup & branding', 'Up to 20 products', 'Payment & shipping setup', 'Mobile responsive', '7 days support'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 599,
+                    'billing' => 'one-time',
+                    'best_for' => 'Growing brands',
+                    'features' => ['Custom theme design', 'Up to 100 products', 'App integration (reviews, upsell, email)', 'Speed & SEO setup', '30 days support'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 1199,
+                    'billing' => 'one-time',
+                    'best_for' => 'Large catalogs and custom needs',
+                    'features' => [
+                        'Fully custom theme',
+                        'Unlimited products',
+                        'Custom features & apps',
+                        'Store migration',
+                        'Conversion optimisation',
+                        '60 days support',
+                    ],
+                    'popular' => false,
+                ],
+            ],
         ],
         [
             'slug' => 'wordpress-development',
@@ -93,8 +182,77 @@ return [
                     'q' => 'Do you fix hacked or slow WordPress sites?',
                     'a' => 'Yes. We clean malware, fix errors and optimize slow WordPress websites.',
                 ],
+                [
+                    'q' => 'How much does a WordPress website cost?',
+                    'a' => 'It depends on the number of pages and features. See our pricing page for starting packages.',
+                ],
+                [
+                    'q' => 'Do you build WooCommerce stores?',
+                    'a' => 'Yes. We build complete WooCommerce stores with payments, shipping and inventory.',
+                ],
             ],
             'summary' => 'Flexible, secure and easy-to-manage WordPress websites, themes and plugins.',
+            'intro' => 'Get a WordPress website that is fast, secure and easy for your team to manage. We build custom themes and clean code instead of heavy page builders, so your site stays quick as it grows.',
+            'highlights' => ['Easy to update without a developer', 'Custom theme built for speed and SEO', 'Secure, backed up and maintained'],
+            'offerings' => [
+                'WordPress Website Development',
+                'Custom Theme Development',
+                'Plugin Development',
+                'WooCommerce Development',
+                'Elementor & Gutenberg Builds',
+                'Speed Optimization',
+                'Security Hardening',
+                'Website Migration',
+                'Maintenance & Support',
+            ],
+            'process' => [
+                [
+                    'title' => 'Discovery',
+                    'text' => 'We define your pages, content and goals.',
+                ],
+                [
+                    'title' => 'Design',
+                    'text' => 'We design the layout and look of every key page.',
+                ],
+                [
+                    'title' => 'Development',
+                    'text' => 'We build a lightweight custom theme and the features you need.',
+                ],
+                [
+                    'title' => 'Content & SEO',
+                    'text' => 'We add your content, set up SEO and test speed.',
+                ],
+                [
+                    'title' => 'Launch & Training',
+                    'text' => 'We go live and show your team how to update the site.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 199,
+                    'billing' => 'one-time',
+                    'best_for' => 'Small business websites',
+                    'features' => ['Up to 5 pages', 'Premium theme customisation', 'Contact form & WhatsApp button', 'Basic on-page SEO', '7 days support'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 449,
+                    'billing' => 'one-time',
+                    'best_for' => 'Growing businesses',
+                    'features' => ['Up to 12 pages', 'Custom theme design', 'Blog setup', 'Speed & security setup', '30 days support'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 899,
+                    'billing' => 'one-time',
+                    'best_for' => 'Online stores and advanced sites',
+                    'features' => ['Fully custom theme', 'WooCommerce store', 'Custom plugin features', 'Migration from old site', '60 days support'],
+                    'popular' => false,
+                ],
+            ],
         ],
         [
             'slug' => 'seo-services',
@@ -138,8 +296,195 @@ return [
                     'q' => 'Do you guarantee the number one position?',
                     'a' => 'No honest agency can. We commit to proven methods, transparent reporting and steady growth.',
                 ],
+                [
+                    'q' => 'How much do SEO services cost?',
+                    'a' => 'SEO is billed monthly. See our pricing page for plans, or ask for a free audit first.',
+                ],
+                [
+                    'q' => 'Do you do local SEO?',
+                    'a' => 'Yes. We optimise your Google Business Profile, local citations and map rankings.',
+                ],
             ],
             'summary' => 'Higher rankings and more organic traffic with technical, on-page and content SEO.',
+            'intro' => 'Rank higher on Google and get more customers without paying for every click. Our SEO combines technical fixes, on-page content and local SEO, with clear monthly reports.',
+            'highlights' => [
+                'More organic traffic and qualified leads',
+                'Technical, on-page and local SEO in one plan',
+                'Transparent monthly reports',
+            ],
+            'offerings' => [
+                'SEO Audit',
+                'Keyword Research',
+                'Technical SEO',
+                'On-Page SEO',
+                'Local SEO & Google Business Profile',
+                'Off-Page SEO & Link Building',
+                'Content Optimization',
+                'Ecommerce SEO',
+                'Monthly Reporting',
+            ],
+            'process' => [
+                [
+                    'title' => 'Audit',
+                    'text' => 'We audit your website, rankings and competitors.',
+                ],
+                [
+                    'title' => 'Keyword Strategy',
+                    'text' => 'We choose the keywords your customers actually search.',
+                ],
+                [
+                    'title' => 'On-Site Fixes',
+                    'text' => 'We fix technical issues and optimise pages and content.',
+                ],
+                [
+                    'title' => 'Authority Building',
+                    'text' => 'We build quality links and local citations.',
+                ],
+                [
+                    'title' => 'Report & Improve',
+                    'text' => 'We report results monthly and keep improving.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 149,
+                    'billing' => 'per month',
+                    'best_for' => 'Local businesses',
+                    'features' => ['Up to 10 keywords', 'On-page SEO', 'Google Business Profile', 'Monthly report'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 299,
+                    'billing' => 'per month',
+                    'best_for' => 'Growing websites',
+                    'features' => ['Up to 25 keywords', 'Technical + on-page SEO', '4 blog articles', 'Link building', 'Monthly report'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 599,
+                    'billing' => 'per month',
+                    'best_for' => 'Competitive markets',
+                    'features' => ['Up to 50 keywords', 'Full technical SEO', '8 blog articles', 'Advanced link building', 'Dedicated SEO manager'],
+                    'popular' => false,
+                ],
+            ],
+        ],
+        [
+            'slug' => 'digital-marketing',
+            'name' => 'Digital Marketing',
+            'icon' => 'i-target',
+            'h1' => 'Digital Marketing Services',
+            'description' => 'Social media marketing, Google Ads, Meta Ads and content marketing by Eralogicsolution. Reach the right customers and grow sales.',
+            'lead' => 'Social media, paid ads and content marketing run as one plan, focused on one goal: more customers for your business.',
+            'features' => [
+                [
+                    'title' => 'Social Media Marketing',
+                    'text' => 'Content calendars, posts and community management on Facebook, Instagram and LinkedIn.',
+                ],
+                [
+                    'title' => 'Google Ads (PPC)',
+                    'text' => 'Search and shopping campaigns that bring buyers ready to act.',
+                ],
+                [
+                    'title' => 'Meta & TikTok Ads',
+                    'text' => 'Targeted ads with creatives that stop the scroll.',
+                ],
+                [
+                    'title' => 'Content Marketing',
+                    'text' => 'Blogs, videos and posts that build trust and rankings.',
+                ],
+                [
+                    'title' => 'Email & WhatsApp Marketing',
+                    'text' => 'Automated campaigns that bring customers back.',
+                ],
+                [
+                    'title' => 'Analytics & Reporting',
+                    'text' => 'Conversion tracking and clear monthly reports.',
+                ],
+            ],
+            'faqs' => [
+                [
+                    'q' => 'Is the ad budget included in your price?',
+                    'a' => 'No. Our plans cover management, creatives and reporting. The ad budget is paid directly to Google or Meta.',
+                ],
+                [
+                    'q' => 'Which platforms do you manage?',
+                    'a' => 'Facebook, Instagram, TikTok, LinkedIn, Google Search, Shopping and YouTube.',
+                ],
+                [
+                    'q' => 'How much does digital marketing cost?',
+                    'a' => 'Plans are monthly. See our pricing page for details.',
+                ],
+                [
+                    'q' => 'How soon will I see results?',
+                    'a' => 'Paid ads can bring leads in the first weeks; organic social media grows over 2 to 3 months.',
+                ],
+            ],
+            'summary' => 'Social media, Google Ads, Meta Ads and content marketing that bring real customers.',
+            'intro' => 'Turn your marketing budget into real customers. We plan, create and manage campaigns across social media and Google, tracking every lead and sale.',
+            'highlights' => ['Campaigns focused on leads and sales', 'Creatives, copy and ads under one roof', 'Transparent results every month'],
+            'offerings' => [
+                'Social Media Management',
+                'Facebook & Instagram Ads',
+                'Google Ads (PPC)',
+                'TikTok Ads',
+                'YouTube Ads',
+                'Content Marketing',
+                'Email Marketing',
+                'WhatsApp Marketing',
+                'Conversion Tracking',
+            ],
+            'process' => [
+                [
+                    'title' => 'Research',
+                    'text' => 'We study your audience, offer and competitors.',
+                ],
+                [
+                    'title' => 'Strategy',
+                    'text' => 'We plan channels, budget and content.',
+                ],
+                [
+                    'title' => 'Creatives',
+                    'text' => 'We design posts, ads and copy.',
+                ],
+                [
+                    'title' => 'Launch & Optimise',
+                    'text' => 'We run campaigns and optimise them weekly.',
+                ],
+                [
+                    'title' => 'Report',
+                    'text' => 'We report leads, sales and next steps every month.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 199,
+                    'billing' => 'per month',
+                    'best_for' => 'Social media presence',
+                    'features' => ['12 posts per month', '2 platforms', 'Page management', 'Monthly report'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 399,
+                    'billing' => 'per month',
+                    'best_for' => 'Leads with paid ads',
+                    'features' => ['20 posts per month', 'Meta ads management', 'Ad creatives', 'Conversion tracking', 'Monthly report'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 799,
+                    'billing' => 'per month',
+                    'best_for' => 'Full-funnel marketing',
+                    'features' => ['Daily posts', 'Meta + Google ads', 'Email/WhatsApp campaigns', 'Video reels', 'Dedicated manager'],
+                    'popular' => false,
+                ],
+            ],
         ],
         [
             'slug' => 'laravel-development',
@@ -183,8 +528,77 @@ return [
                     'q' => 'Can you take over an existing Laravel project?',
                     'a' => 'Yes. We audit the code first, then continue development or fix issues.',
                 ],
+                [
+                    'q' => 'How much does a Laravel application cost?',
+                    'a' => 'It depends on features and complexity. See our pricing page for starting prices or ask for a detailed quote.',
+                ],
+                [
+                    'q' => 'Will I get the source code?',
+                    'a' => 'Yes. You own the full source code after final payment.',
+                ],
             ],
             'summary' => 'Robust, scalable web applications and APIs built on the Laravel framework.',
+            'intro' => 'Build secure, scalable web applications on Laravel, the most popular PHP framework. From portals and dashboards to APIs and SaaS products, our code is clean and easy to maintain.',
+            'highlights' => ['Secure and scalable from day one', 'Clean, well-documented code', 'APIs and integrations with any service'],
+            'offerings' => [
+                'Custom Web Applications',
+                'REST API Development',
+                'SaaS Development',
+                'Admin Panels & Dashboards',
+                'Payment Gateway Integration',
+                'Third-Party Integrations',
+                'Laravel Upgrades & Migration',
+                'Performance Optimization',
+                'Maintenance & Support',
+            ],
+            'process' => [
+                [
+                    'title' => 'Requirements',
+                    'text' => 'We map your workflows, users and features.',
+                ],
+                [
+                    'title' => 'Architecture',
+                    'text' => 'We design the database and system structure.',
+                ],
+                [
+                    'title' => 'Development',
+                    'text' => 'We build features in short sprints you can review.',
+                ],
+                [
+                    'title' => 'Testing',
+                    'text' => 'We test functionality, security and performance.',
+                ],
+                [
+                    'title' => 'Deploy & Support',
+                    'text' => 'We deploy to your server and support future updates.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 499,
+                    'billing' => 'one-time',
+                    'best_for' => 'Simple web apps',
+                    'features' => ['Up to 5 modules', 'Login & user roles', 'Admin panel', 'Responsive UI', '15 days support'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 999,
+                    'billing' => 'one-time',
+                    'best_for' => 'Business systems',
+                    'features' => ['Up to 12 modules', 'REST APIs', 'Payment integration', 'Reports & dashboard', '30 days support'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 1999,
+                    'billing' => 'one-time',
+                    'best_for' => 'SaaS & large platforms',
+                    'features' => ['Unlimited modules', 'Multi-tenant / SaaS setup', 'Third-party integrations', 'Performance tuning', '60 days support'],
+                    'popular' => false,
+                ],
+            ],
         ],
         [
             'slug' => 'custom-website-development',
@@ -228,8 +642,77 @@ return [
                     'q' => 'Do you provide hosting and a domain?',
                     'a' => 'We help you choose and set up hosting and a domain, and deploy the site for you.',
                 ],
+                [
+                    'q' => 'How much does a custom website cost?',
+                    'a' => 'It depends on pages, design and features. See our pricing page for starting packages.',
+                ],
+                [
+                    'q' => 'Can you redesign my current website?',
+                    'a' => 'Yes. We redesign outdated websites and keep your SEO rankings safe.',
+                ],
             ],
             'summary' => 'Tailored websites for unique business needs, built for speed, security and performance.',
+            'intro' => 'Stand out with a website designed and coded specifically for your business. No templates, no bloat — just a fast, responsive website built to turn visitors into customers.',
+            'highlights' => ['100% custom design for your brand', 'Fast-loading and mobile-first', 'SEO-friendly structure from day one'],
+            'offerings' => [
+                'Business Websites',
+                'Corporate Websites',
+                'Landing Pages',
+                'Ecommerce Websites',
+                'Portfolio Websites',
+                'Website Redesign',
+                'CMS Integration',
+                'Responsive Development',
+                'Website Maintenance',
+            ],
+            'process' => [
+                [
+                    'title' => 'Discovery',
+                    'text' => 'We learn about your business, audience and goals.',
+                ],
+                [
+                    'title' => 'Wireframes',
+                    'text' => 'We plan the layout of every page.',
+                ],
+                [
+                    'title' => 'Design',
+                    'text' => 'We create a custom visual design for approval.',
+                ],
+                [
+                    'title' => 'Development',
+                    'text' => 'We code a fast, responsive website.',
+                ],
+                [
+                    'title' => 'Launch & Support',
+                    'text' => 'We launch, test and support your website.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 249,
+                    'billing' => 'one-time',
+                    'best_for' => 'Landing pages & small sites',
+                    'features' => ['Up to 3 pages', 'Custom design', 'Contact form', 'Mobile responsive', '7 days support'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 549,
+                    'billing' => 'one-time',
+                    'best_for' => 'Business websites',
+                    'features' => ['Up to 8 pages', 'Custom design & animations', 'CMS for easy editing', 'SEO setup', '30 days support'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 1099,
+                    'billing' => 'one-time',
+                    'best_for' => 'Advanced websites',
+                    'features' => ['Up to 20 pages', 'Advanced features', 'Ecommerce or booking', 'Speed optimisation', '60 days support'],
+                    'popular' => false,
+                ],
+            ],
         ],
         [
             'slug' => 'graphic-designing',
@@ -273,8 +756,77 @@ return [
                     'q' => 'Which file formats do you deliver?',
                     'a' => 'AI, EPS, SVG, PDF, PNG and JPG, ready for print and web.',
                 ],
+                [
+                    'q' => 'How much does graphic design cost?',
+                    'a' => 'See our pricing page for logo, branding and social media packages.',
+                ],
+                [
+                    'q' => 'How many revisions do I get?',
+                    'a' => 'Every package includes revisions. The number is listed in each package.',
+                ],
             ],
             'summary' => 'Logos, brand identity, social media creatives and print designs that get noticed.',
+            'intro' => 'Make your brand look professional everywhere. Our designers create logos, brand identities, social media posts and print materials that are consistent and memorable.',
+            'highlights' => ['Unique designs, never templates', 'Consistent brand across every platform', 'Print-ready and editable source files'],
+            'offerings' => [
+                'Logo Design',
+                'Brand Identity',
+                'Social Media Posts',
+                'Brochure & Company Profile',
+                'Business Cards & Stationery',
+                'Packaging Design',
+                'Banner & Ad Design',
+                'Infographics',
+                'Web Graphics',
+            ],
+            'process' => [
+                [
+                    'title' => 'Brief',
+                    'text' => 'We learn about your brand, audience and style.',
+                ],
+                [
+                    'title' => 'Research',
+                    'text' => 'We study your market and competitors.',
+                ],
+                [
+                    'title' => 'Concepts',
+                    'text' => 'We create initial design concepts.',
+                ],
+                [
+                    'title' => 'Revisions',
+                    'text' => 'We refine the chosen design with your feedback.',
+                ],
+                [
+                    'title' => 'Delivery',
+                    'text' => 'We deliver final files in every format you need.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 49,
+                    'billing' => 'one-time',
+                    'best_for' => 'A new logo',
+                    'features' => ['2 logo concepts', '2 revisions', 'PNG, JPG & PDF files', '3 days delivery'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 149,
+                    'billing' => 'one-time',
+                    'best_for' => 'Complete brand starter',
+                    'features' => ['4 logo concepts', 'Brand colours & fonts', 'Business card design', '10 social media posts', 'Source files'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 349,
+                    'billing' => 'one-time',
+                    'best_for' => 'Full brand identity',
+                    'features' => ['Unlimited concepts', 'Complete brand guidelines', 'Stationery & brochure', '30 social media posts', 'Source files'],
+                    'popular' => false,
+                ],
+            ],
         ],
         [
             'slug' => 'ui-ux-design',
@@ -318,8 +870,77 @@ return [
                     'q' => 'Will I own the Figma files?',
                     'a' => 'Yes. You get full ownership of all design files.',
                 ],
+                [
+                    'q' => 'How much does UI/UX design cost?',
+                    'a' => 'It depends on the number of screens. See our pricing page for packages.',
+                ],
+                [
+                    'q' => 'Can you also build the design?',
+                    'a' => 'Yes. Our developers can turn the Figma design into a working website or app.',
+                ],
             ],
             'summary' => 'Modern, user-friendly interfaces and prototypes, plus Figma-to-website conversion.',
+            'intro' => 'Design websites and apps that people find easy and enjoyable to use. We research, wireframe and design in Figma, then hand over clean files your developers can build from.',
+            'highlights' => ['User-tested flows that convert', 'Pixel-perfect designs in Figma', 'Developer-ready handover'],
+            'offerings' => [
+                'UX Research',
+                'Wireframing',
+                'Website UI Design',
+                'Mobile App UI Design',
+                'Interactive Prototypes',
+                'Design Systems',
+                'Dashboard Design',
+                'Figma to Website',
+                'Website & App Redesign',
+            ],
+            'process' => [
+                [
+                    'title' => 'Research',
+                    'text' => 'We understand your users and their goals.',
+                ],
+                [
+                    'title' => 'Wireframes',
+                    'text' => 'We map flows and screen layouts.',
+                ],
+                [
+                    'title' => 'Visual Design',
+                    'text' => 'We design polished screens in Figma.',
+                ],
+                [
+                    'title' => 'Prototype',
+                    'text' => 'We build a clickable prototype to test.',
+                ],
+                [
+                    'title' => 'Handover',
+                    'text' => 'We deliver files and a design system to developers.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 199,
+                    'billing' => 'one-time',
+                    'best_for' => 'Landing page or small app',
+                    'features' => ['Up to 5 screens', 'Wireframes + UI design', '2 revisions', 'Figma source file'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 499,
+                    'billing' => 'one-time',
+                    'best_for' => 'Websites & apps',
+                    'features' => ['Up to 15 screens', 'Clickable prototype', 'Mobile + desktop versions', '3 revisions', 'Figma source file'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 999,
+                    'billing' => 'one-time',
+                    'best_for' => 'Products & dashboards',
+                    'features' => ['Up to 40 screens', 'UX research', 'Design system', 'Unlimited revisions', 'Developer handover'],
+                    'popular' => false,
+                ],
+            ],
         ],
         [
             'slug' => 'software-development',
@@ -363,8 +984,77 @@ return [
                     'q' => 'Who owns the source code?',
                     'a' => 'You do. Full source code is handed over on completion.',
                 ],
+                [
+                    'q' => 'How long does custom software take?',
+                    'a' => 'Most projects take 6 to 16 weeks depending on features. You get a timeline before we start.',
+                ],
+                [
+                    'q' => 'Can you integrate with our existing tools?',
+                    'a' => 'Yes. We connect your software with accounting, payment, email and other tools.',
+                ],
             ],
             'summary' => 'Web applications, dashboards, APIs and custom software for your business workflows.',
+            'intro' => 'Automate your business with software built around how you work. CRMs, ERPs, dashboards and internal tools that save time and reduce errors.',
+            'highlights' => ['Built around your exact workflow', 'Secure, scalable and cloud-ready', 'Full source code ownership'],
+            'offerings' => [
+                'Custom Software Development',
+                'CRM Development',
+                'ERP Systems',
+                'Inventory & POS Systems',
+                'Business Automation',
+                'Dashboards & Reports',
+                'API Development',
+                'Cloud Deployment',
+                'Support & Upgrades',
+            ],
+            'process' => [
+                [
+                    'title' => 'Analysis',
+                    'text' => 'We study your processes and pain points.',
+                ],
+                [
+                    'title' => 'Planning',
+                    'text' => 'We define features, timeline and budget.',
+                ],
+                [
+                    'title' => 'Development',
+                    'text' => 'We build in stages with regular demos.',
+                ],
+                [
+                    'title' => 'Testing',
+                    'text' => 'We test thoroughly with real data.',
+                ],
+                [
+                    'title' => 'Training & Support',
+                    'text' => 'We train your team and support the system.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 799,
+                    'billing' => 'one-time',
+                    'best_for' => 'Small internal tools',
+                    'features' => ['Up to 5 modules', 'User roles & login', 'Reports', 'Web based', '30 days support'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 1599,
+                    'billing' => 'one-time',
+                    'best_for' => 'CRM / inventory systems',
+                    'features' => ['Up to 12 modules', 'Dashboards & analytics', 'Integrations', 'Data import/export', '60 days support'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 2999,
+                    'billing' => 'one-time',
+                    'best_for' => 'ERP & enterprise systems',
+                    'features' => ['Unlimited modules', 'Multi-branch support', 'Advanced automation', 'Cloud deployment', '90 days support'],
+                    'popular' => false,
+                ],
+            ],
         ],
         [
             'slug' => 'app-development',
@@ -408,9 +1098,86 @@ return [
                     'q' => 'Do you publish the app on the stores?',
                     'a' => 'Yes. We handle submission to Google Play and the App Store.',
                 ],
+                [
+                    'q' => 'How much does a mobile app cost?',
+                    'a' => 'It depends on screens and features. See our pricing page for starting packages.',
+                ],
+                [
+                    'q' => 'Do you build the admin panel too?',
+                    'a' => 'Yes. We build the backend, APIs and admin panel your app needs.',
+                ],
             ],
             'summary' => 'Android and iOS mobile apps with smooth performance and a clean user experience.',
+            'intro' => 'Reach your customers on their phones with fast, beautiful mobile apps. We design, build and publish Android and iOS apps, often from a single Flutter codebase to save time and cost.',
+            'highlights' => ['Android and iOS from one codebase', 'Smooth, native-like performance', 'Published on Play Store and App Store'],
+            'offerings' => [
+                'Android App Development',
+                'iOS App Development',
+                'Flutter App Development',
+                'React Native Apps',
+                'App UI/UX Design',
+                'Backend & Admin Panel',
+                'Push Notifications',
+                'App Store Publishing',
+                'App Maintenance',
+            ],
+            'process' => [
+                [
+                    'title' => 'Idea & Scope',
+                    'text' => 'We define your app features and users.',
+                ],
+                [
+                    'title' => 'UI/UX Design',
+                    'text' => 'We design every screen in Figma.',
+                ],
+                [
+                    'title' => 'Development',
+                    'text' => 'We build the app and its backend.',
+                ],
+                [
+                    'title' => 'Testing',
+                    'text' => 'We test on real Android and iOS devices.',
+                ],
+                [
+                    'title' => 'Publish & Support',
+                    'text' => 'We publish to the stores and support updates.',
+                ],
+            ],
+            'packages' => [
+                [
+                    'name' => 'Basic',
+                    'price' => 999,
+                    'billing' => 'one-time',
+                    'best_for' => 'Simple apps',
+                    'features' => ['Android or iOS', 'Up to 8 screens', 'Basic backend', 'Store publishing', '30 days support'],
+                    'popular' => false,
+                ],
+                [
+                    'name' => 'Standard',
+                    'price' => 1999,
+                    'billing' => 'one-time',
+                    'best_for' => 'Business apps',
+                    'features' => ['Android + iOS (Flutter)', 'Up to 20 screens', 'Admin panel & APIs', 'Push notifications', '60 days support'],
+                    'popular' => true,
+                ],
+                [
+                    'name' => 'Premium',
+                    'price' => 3999,
+                    'billing' => 'one-time',
+                    'best_for' => 'Marketplace & advanced apps',
+                    'features' => ['Android + iOS', 'Unlimited screens', 'Payments & real-time features', 'Advanced admin', '90 days support'],
+                    'popular' => false,
+                ],
+            ],
         ],
+    ],
+    // Questions shown on the pricing page.
+    'pricing_faqs' => [
+        ['q' => 'Are these prices final?', 'a' => 'They are starting prices for the scope listed in each package. If you need more pages, features or keywords we send a fixed written quote before any work starts.'],
+        ['q' => 'How do payments work?', 'a' => 'One-time projects are paid 50% upfront and 50% before launch. Monthly plans (SEO and marketing) are billed at the start of each month and can be cancelled with 30 days notice.'],
+        ['q' => 'Is the advertising budget included?', 'a' => 'No. Marketing plans cover management, creatives and reporting. Your ad budget is paid directly to Google, Meta or TikTok.'],
+        ['q' => 'Are domain and hosting included?', 'a' => 'They are billed separately at cost. We can set them up in your name so you stay in control.'],
+        ['q' => 'Can I combine services?', 'a' => 'Yes. Many clients combine a website with SEO or marketing. Tell us what you need and we will price it together.'],
     ],
 
     'faqs' => [
@@ -424,26 +1191,47 @@ return [
         ],
         [
             'q' => 'What technologies do you use?',
-            'a' => 'Shopify, WordPress, Laravel, React, JavaScript, Flutter and Figma, chosen to suit your project and budget.',
+            'a' => 'Shopify, WordPress, Laravel, React, Vue.js, Flutter and Figma, plus SEO and marketing tools such as Google Ads, Meta Ads and Google Analytics.',
         ],
         [
             'q' => 'How much does a website cost?',
-            'a' => 'Cost depends on scope, design and features. Share your requirements and we\'ll send a free, itemized quote.',
+            'a' => 'Cost depends on scope, design and features. Every service has starting packages on our pricing page, or share your requirements for a free, itemized quote.',
         ],
         [
             'q' => 'Can you redesign or fix my existing website?',
             'a' => 'Yes. We redesign, speed up, migrate and fix existing Shopify, WordPress and custom websites.',
         ],
     ],
-
-    // Customer reviews shown in the home page carousel.
-    // Replace these placeholders with real client reviews. Add as many as you like.
     'reviews' => [
-        ['text' => 'Add your first client review here. Two or three sentences about the project and the result work best.', 'name' => 'Client name', 'role' => 'Role, Company', 'rating' => 5],
-        ['text' => 'Add your second client review here. A Shopify or WordPress client is a good fit for this spot.', 'name' => 'Client name', 'role' => 'Role, Company', 'rating' => 5],
-        ['text' => 'Add your third client review here. A software or app development client rounds out the set.', 'name' => 'Client name', 'role' => 'Role, Company', 'rating' => 5],
-        ['text' => 'Add your fourth client review here. An SEO result with real numbers is very convincing.', 'name' => 'Client name', 'role' => 'Role, Company', 'rating' => 5],
-        ['text' => 'Add your fifth client review here. A design or branding client adds variety.', 'name' => 'Client name', 'role' => 'Role, Company', 'rating' => 5],
+        [
+            'text' => 'Add your first client review here. Two or three sentences about the project and the result work best.',
+            'name' => 'Client name',
+            'role' => 'Role, Company',
+            'rating' => 5,
+        ],
+        [
+            'text' => 'Add your second client review here. A Shopify or WordPress client is a good fit for this spot.',
+            'name' => 'Client name',
+            'role' => 'Role, Company',
+            'rating' => 5,
+        ],
+        [
+            'text' => 'Add your third client review here. A software or app development client rounds out the set.',
+            'name' => 'Client name',
+            'role' => 'Role, Company',
+            'rating' => 5,
+        ],
+        [
+            'text' => 'Add your fourth client review here. An SEO result with real numbers is very convincing.',
+            'name' => 'Client name',
+            'role' => 'Role, Company',
+            'rating' => 5,
+        ],
+        [
+            'text' => 'Add your fifth client review here. A design or branding client adds variety.',
+            'name' => 'Client name',
+            'role' => 'Role, Company',
+            'rating' => 5,
+        ],
     ],
-
 ];

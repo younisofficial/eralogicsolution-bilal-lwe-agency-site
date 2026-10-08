@@ -108,6 +108,13 @@ class Schema
             'description' => $service['description'],
             'url' => $url,
             'provider' => ['@id' => url('/').'#business'],
+            'offers' => [
+                '@type' => 'AggregateOffer',
+                'priceCurrency' => 'USD',
+                'lowPrice' => collect($service['packages'])->min('price'),
+                'highPrice' => collect($service['packages'])->max('price'),
+                'offerCount' => count($service['packages']),
+            ],
             'areaServed' => [
                 ['@type' => 'City', 'name' => config('site.city')],
                 ['@type' => 'Country', 'name' => config('site.country')],
@@ -115,15 +122,57 @@ class Schema
         ];
     }
 
-    public static function breadcrumbs(array $service): array
+    /** @param  array<int, array{0: string, 1: string}>  $trail  [name, url] pairs after "Home" */
+    public static function breadcrumbs(array $trail): array
+    {
+        $items = [['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')]];
+
+        foreach ($trail as $i => [$name, $url]) {
+            $items[] = ['@type' => 'ListItem', 'position' => $i + 2, 'name' => $name, 'item' => $url];
+        }
+
+        return ['@type' => 'BreadcrumbList', 'itemListElement' => $items];
+    }
+
+    public static function serviceList(array $services): array
     {
         return [
-            '@type' => 'BreadcrumbList',
-            'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => url('/')],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Services', 'item' => url('/').'#services'],
-                ['@type' => 'ListItem', 'position' => 3, 'name' => $service['name'], 'item' => route('services.show', $service['slug'])],
-            ],
+            '@type' => 'ItemList',
+            'name' => 'Services',
+            'itemListElement' => array_map(fn (array $service, int $i) => [
+                '@type' => 'ListItem',
+                'position' => $i + 1,
+                'name' => $service['name'],
+                'url' => route('services.show', $service['slug']),
+            ], $services, array_keys($services)),
         ];
+    }
+
+    /** Every package as an Offer with a price, for the pricing page. */
+    public static function pricing(array $services): array
+    {
+        $offers = [];
+
+        foreach ($services as $service) {
+            foreach ($service['packages'] as $plan) {
+                $offers[] = [
+                    '@type' => 'Offer',
+                    'name' => $service['name'].' — '.$plan['name'],
+                    'description' => $plan['best_for'],
+                    'priceCurrency' => 'USD',
+                    'price' => $plan['price'],
+                    'priceSpecification' => [
+                        '@type' => 'UnitPriceSpecification',
+                        'price' => $plan['price'],
+                        'priceCurrency' => 'USD',
+                        'unitText' => $plan['billing'] === 'per month' ? 'MONTH' : 'ONE-TIME',
+                    ],
+                    'itemOffered' => ['@type' => 'Service', 'name' => $service['name'], 'url' => route('services.show', $service['slug'])],
+                    'seller' => ['@id' => url('/').'#business'],
+                ];
+            }
+        }
+
+        return ['@type' => 'OfferCatalog', 'name' => 'Service packages', 'url' => route('pricing'), 'itemListElement' => $offers];
     }
 }

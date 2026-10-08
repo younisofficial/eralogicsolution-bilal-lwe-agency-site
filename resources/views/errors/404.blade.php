@@ -11,7 +11,7 @@
     <p class="lead" style="margin-inline:auto">The page you are looking for has moved or does not exist.</p>
     <div class="cta-row" style="justify-content:center">
       <a class="btn btn-p" href="{{ url('/') }}">Back to Home</a>
-      <a class="btn btn-o" href="{{ url('/') }}#services">Our Services</a>
+      <a class="btn btn-o" href="{{ route('services.index') }}">Our Services</a>
     </div>
   </div>
 </div>

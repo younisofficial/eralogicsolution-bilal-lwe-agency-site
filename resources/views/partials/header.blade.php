@@ -1,11 +1,11 @@
 @php
     $home = url('/');
     // The contact section exists on the home and service pages only.
-    $contact = request()->routeIs('home', 'services.show') ? '#contact' : $home.'#contact';
+    $contact = request()->routeIs('home', 'services.index', 'services.show', 'pricing') ? '#contact' : $home.'#contact';
     $navLinks = [
-        ['label' => 'Services', 'href' => $home.'#services'],
+        ['label' => 'Services', 'href' => route('services.index')],
+        ['label' => 'Pricing', 'href' => route('pricing')],
         ['label' => 'Work', 'href' => $home.'#work'],
-        ['label' => 'Technologies', 'href' => $home.'#tech'],
         ['label' => 'Process', 'href' => $home.'#process'],
         ['label' => 'FAQ', 'href' => $home.'#faq'],
         ['label' => 'Contact', 'href' => $contact],

@@ -9,7 +9,11 @@ class SeoController extends Controller
     public function sitemap(): Response
     {
         $today = now()->toDateString();
-        $urls = [['loc' => url('/'), 'priority' => '1.0']];
+        $urls = [
+            ['loc' => url('/'), 'priority' => '1.0'],
+            ['loc' => route('services.index'), 'priority' => '0.9'],
+            ['loc' => route('pricing'), 'priority' => '0.9'],
+        ];
 
         foreach (config('agency.services') as $service) {
             $urls[] = ['loc' => route('services.show', $service['slug']), 'priority' => '0.8'];

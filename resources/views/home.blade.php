@@ -18,34 +18,37 @@
       </div>
     </div>
 
-    <div class="stage" aria-hidden="true">
-      <div class="laptop">
-        <div class="screen">
-          <div class="dots"><span></span><span></span><span></span></div>
-          <h4>Smart Logic for Modern Brands</h4>
-          <p>Websites, stores and apps engineered to perform.</p>
-          <b>Get started</b>
-        </div>
+    <div class="hero-visual">
+      {{-- Banner photo: set SITE_HERO_PHOTO in .env (JPG/PNG/WebP, portrait, at least 900px wide). --}}
+      <div class="photo-frame">
+        <img src="{{ asset(config('site.hero_photo')) }}" alt="{{ config('site.name') }} team" width="900" height="1100" fetchpriority="high" decoding="async">
       </div>
-      <div class="base"></div>
-      <div class="float f1"><div class="ring">98</div><div>Performance Score<strong style="font-size:15px;color:var(--mint)">A+ Desktop</strong></div></div>
-      <div class="float f2">SEO Score<strong>92 <span class="up" style="font-size:11px">Great</span></strong>
+      <div class="float f1" aria-hidden="true"><div class="ring">98</div><div>Performance Score<strong style="font-size:15px;color:var(--mint)">A+ Desktop</strong></div></div>
+      <div class="float f2" aria-hidden="true">SEO Score<strong>92 <span class="up" style="font-size:11px">Great</span></strong>
         <svg class="spark" viewBox="0 0 96 30"><path d="M2 26 L18 22 L32 24 L48 15 L62 17 L78 8 L94 4" fill="none" stroke="#5b4be6" stroke-width="2" stroke-linecap="round"/></svg></div>
-      <div class="float f3">Conversion Rate<strong>4.8% <span class="up" style="font-size:11px">▲ +2.3%</span></strong>
+      <div class="float f3" aria-hidden="true">Conversion Rate<strong>4.8% <span class="up" style="font-size:11px">▲ +2.3%</span></strong>
         <svg class="spark" viewBox="0 0 96 30"><path d="M2 27 L16 24 L30 25 L44 18 L58 20 L72 11 L94 3" fill="none" stroke="#5b4be6" stroke-width="2" stroke-linecap="round"/></svg></div>
-      <div class="float f4">
-        <span><svg class="ico"><use href="#i-bag"/></svg></span><span><svg class="ico"><use href="#i-blog"/></svg></span><span><svg class="ico"><use href="#i-server"/></svg></span><span><svg class="ico"><use href="#i-phone"/></svg></span>
-      </div>
     </div>
   </div>
 </div>
 
-<div class="strip">
-  <div class="wrap">
-    <p>Platforms and tools we build with</p>
-    <ul>
-      @foreach (['Shopify' => 'i-bag', 'WordPress' => 'i-blog', 'Laravel' => 'i-server', 'React' => 'i-code', 'Flutter' => 'i-phone', 'Figma' => 'i-frame'] as $platform => $icon)
-        <li><i><svg class="ico"><use href="#{{ $icon }}"/></svg></i>{{ $platform }}</li>
+@php
+    // Moving strip under the banner (right to left). Add or remove items freely.
+    $platforms = [
+        'Shopify' => 'i-bag', 'WordPress' => 'i-blog', 'Laravel' => 'i-server', 'React' => 'i-code',
+        'Vue.js' => 'i-code', 'Flutter' => 'i-phone', 'Figma' => 'i-frame', 'SEO' => 'i-search',
+        'Digital Marketing' => 'i-target', 'Google Ads' => 'i-target', 'Meta Ads' => 'i-chat',
+        'Social Media' => 'i-chat', 'Content Writing' => 'i-pen', 'Graphic Design' => 'i-pen',
+        'UI/UX Design' => 'i-frame', 'WooCommerce' => 'i-bag', 'App Development' => 'i-phone',
+    ];
+@endphp
+<div class="strip" aria-label="Platforms and services">
+  <div class="marquee">
+    <ul class="marquee-track">
+      @foreach ([false, true] as $copy)
+        @foreach ($platforms as $platform => $icon)
+          <li @if ($copy) aria-hidden="true" @endif><i><svg class="ico"><use href="#{{ $icon }}"/></svg></i>{{ $platform }}</li>
+        @endforeach
       @endforeach
     </ul>
   </div>
@@ -65,11 +68,18 @@
       </ul>
       <p class="area">Based in {{ config('site.city') }}, {{ config('site.country') }}. Serving clients locally and worldwide.</p>
     </div>
-    <div class="about-art" aria-hidden="true">
-      <div class="flow">
-        <div><i><svg class="ico"><use href="#i-chat"/></svg></i>Your Idea</div>
-        <div><i><svg class="ico"><use href="#i-code"/></svg></i>Our Code</div>
-        <div><i><svg class="ico"><use href="#i-rocket"/></svg></i>Real Results</div>
+    <div class="stage about-stage" aria-hidden="true">
+      <div class="laptop">
+        <div class="screen">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <h4>Smart Logic for Modern Brands</h4>
+          <p>Websites, stores and apps engineered to perform.</p>
+          <b>Get started</b>
+        </div>
+      </div>
+      <div class="base"></div>
+      <div class="float f4">
+        <span><svg class="ico"><use href="#i-bag"/></svg></span><span><svg class="ico"><use href="#i-blog"/></svg></span><span><svg class="ico"><use href="#i-server"/></svg></span><span><svg class="ico"><use href="#i-phone"/></svg></span>
       </div>
     </div>
   </div>
@@ -91,6 +101,10 @@
           <span class="go"><svg class="ico"><use href="#i-arrow"/></svg></span>
         </a>
       @endforeach
+    </div>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-p" href="{{ route('services.index') }}">All Services <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-o" href="{{ route('pricing') }}">See Pricing</a>
     </div>
   </div>
 </section>

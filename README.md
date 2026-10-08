@@ -42,11 +42,30 @@ Everything is controlled from `.env`. No code changes needed.
 
 After changing `.env` on the live server run `php artisan config:cache`.
 
+## Pages
+
+| URL | What |
+|---|---|
+| `/` | Home page |
+| `/services` | All services |
+| `/services/{slug}` | One page per service (e.g. `/services/shopify-development`) — intro, offerings, why us, process, packages, FAQs |
+| `/pricing` | Prices for every service (US dollars) |
+
+## Banner photo
+
+Put a real photo (JPG, PNG or WebP — **not SVG**) in `public/assets/`, e.g. `public/assets/founder.jpg`, then in `.env`:
+
+```
+SITE_HERO_PHOTO=assets/founder.jpg
+```
+
+Portrait photos at least 900 px wide work best. Run `php artisan config:clear` afterwards.
+
 ## Where to edit content
 
 | What | File |
 |---|---|
-| Services, service page text, FAQs | `config/agency.php` |
+| Services, service page text, **prices / packages**, FAQs | `config/agency.php` |
 | Business details, stats | `config/site.php` / `.env` |
 | Home page sections (hero, projects, reviews, process) | `resources/views/home.blade.php` |
 | Service page layout | `resources/views/service.blade.php` |

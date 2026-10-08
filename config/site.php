@@ -20,6 +20,10 @@ return [
     'latitude' => env('SITE_LATITUDE'),
     'longitude' => env('SITE_LONGITUDE'),
 
+    // Banner (hero) photo, inside /public. Use a JPG, PNG or WebP photo — do NOT convert it to SVG.
+    // Best: portrait, at least 900px wide and 1100px tall, person in the centre.
+    'hero_photo' => env('SITE_HERO_PHOTO', 'assets/hero-person.svg'),
+
     'opens' => env('SITE_OPENS', '09:00'),
     'closes' => env('SITE_CLOSES', '18:00'),
 

@@ -15,7 +15,7 @@
       </div>
       <div>
         <h4>Company</h4>
-        <ul><li><a href="{{ url('/') }}">Home</a></li><li><a href="{{ url('/') }}#work">Our Work</a></li><li><a href="{{ url('/') }}#tech">Technologies</a></li><li><a href="{{ url('/') }}#process">Process</a></li><li><a href="{{ url('/') }}#faq">FAQ</a></li></ul>
+        <ul><li><a href="{{ url('/') }}">Home</a></li><li><a href="{{ route('services.index') }}">All Services</a></li><li><a href="{{ route('pricing') }}">Pricing</a></li><li><a href="{{ url('/') }}#work">Our Work</a></li><li><a href="{{ url('/') }}#tech">Technologies</a></li><li><a href="{{ url('/') }}#process">Process</a></li><li><a href="{{ url('/') }}#faq">FAQ</a></li></ul>
       </div>
       <div>
         <h4>Get In Touch</h4>
